@@ -1,0 +1,209 @@
+body {
+    margin: 0; /* Elimina el margen por defecto del navegador */
+    color: #6a6f8c; /* Establece el color del texto */
+    background: #c8c8c8; /* Establece el color de fondo de la página */
+    font: 600 16px/18px 'Open Sans', sans-serif; /* Establece la fuente, tamaño y altura de línea para el texto */
+}
+*,:after,:before {
+    box-sizing: border-box; /* Aplica el modelo de caja para incluir padding y border en el tamaño total del elemento */
+}
+.clearfix:after, .clearfix:before {
+    content: ''; /* Crea un contenido vacío */
+    display: table; /* Hace que el pseudo-elemento tenga un comportamiento de tabla */
+}
+.clearfix:after {
+    clear: both; /* Elimina los floats previos */
+    display: block; /* Hace que el pseudo-elemento sea un bloque */
+}
+a {
+    color: inherit; /* El enlace heredará el color del texto del padre */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+}
+
+.login-wrap {
+    width: 100%; /* Ancho completo */
+    margin: auto; /* Centra el elemento */
+    max-width: 525px; /* Establece un ancho máximo */
+    min-height: 670px; /* Establece una altura mínima */
+    position: relative; /* Establece una posición relativa para el contenedor */
+    background: url(https://scontent.fepa5-1.fna.fbcdn.net/v/t39.30808-6/272666670_10159663553661624_8474978284170913330_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=0b6b33&_nc_ohc=OPeiNYRfy_IQ7kNvgGTNUzO&_nc_oc=Adhcm3Rp3OE0ThwuBMU0So_7Vmvg0ZFkWnf3msm05GT6yIqt7oHrtRUcQQOXEIUSpdl6w4iMPlvczXNikVfaIf8d&_nc_zt=23&_nc_ht=scontent.fepa5-1.fna&_nc_gid=AmG-MOW9dc_62tGfRwHO6AQ&oh=00_AYBeoExr-57pEsXDhoT5EwVGrXb83dfs7CHucX8HbUW1Uw&oe=678B7F6B) no-repeat center; /* Define una imagen de fondo */
+    background-size: cover; /* Esto hace que la imagen cubra el contenedor */
+
+    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19); /* Aplica sombra al contenedor */
+}
+
+.login-html {
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    position: absolute; /* Coloca el contenedor de forma absoluta */
+    padding: 90px 70px 50px 70px; /* Espaciado alrededor del contenido */
+    background: rgba(40, 57, 101, .9); /* Fondo semitransparente */
+}
+
+.login-html .sign-in-htm, .login-html .sign-up-htm {
+    top: 0; left: 0; right: 0; bottom: 0; /* Posiciona los elementos en los cuatro bordes */
+    position: absolute; /* Posición absoluta */
+    transform: rotateY(180deg); /* Gira el contenido en el eje Y */
+    backface-visibility: hidden; /* Oculta la cara posterior del elemento */
+    transition: all .4s linear; /* Transición suave de 0.4 segundos */
+}
+
+.login-html .sign-in, .login-html .sign-up, .login-form .group .check {
+    display: none; /* Oculta los elementos */
+}
+
+.login-html .tab, .login-form .group .label, .login-form .group .button {
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+}
+
+.login-html .tab {
+    font-size: 22px; /* Establece el tamaño de la fuente */
+    margin-right: 15px; /* Espacio a la derecha */
+    padding-bottom: 5px; /* Espacio abajo */
+    margin: 0 15px 10px 0; /* Margen alrededor */
+    display: inline-block; /* Hace que el tab se muestre en línea */
+    border-bottom: 2px solid transparent; /* Establece un borde inferior transparente */
+}
+
+.login-html .sign-in:checked + .tab, .login-html .sign-up:checked + .tab {
+    color: #fff; /* Cambia el color del texto cuando está seleccionado */
+    border-color: #1161ee; /* Cambia el color del borde cuando está seleccionado */
+}
+
+.login-form {
+    min-height: 345px; /* Altura mínima */
+    position: relative; /* Posición relativa */
+    perspective: 1000px; /* Perspectiva 3D */
+    transform-style: preserve-3d; /* Mantiene el efecto 3D de los elementos hijos */
+}
+
+.login-form .group {
+    margin-bottom: 15px; /* Margen abajo */
+}
+
+.login-form .group .label, .login-form .group .input, .login-form .group .button {
+    width: 100%; /* Ancho completo */
+    color: #fff; /* Color del texto */
+    display: block; /* Muestra los elementos como bloques */
+}
+
+.login-form .group .input, .login-form .group .button {
+    border: none; /* Elimina el borde */
+    padding: 15px 20px; /* Espaciado interno */
+    border-radius: 25px; /* Bordes redondeados */
+    background: rgba(255, 255, 255, .1); /* Fondo semitransparente */
+}
+
+.login-form .group input[data-type="password"] {
+    -webkit-text-security: circle; /* Muestra las contraseñas como círculos */
+}
+
+.login-form .group .label {
+    color: #aaa; /* Color del texto de las etiquetas */
+    font-size: 12px; /* Tamaño de fuente pequeño */
+}
+
+.login-form .group .button {
+    background: #1161ee; /* Color de fondo del botón */
+}
+
+.login-form .group label .icon {
+    width: 15px; height: 15px; /* Tamaño del ícono */
+    border-radius: 2px; /* Bordes redondeados */
+    position: relative; /* Posición relativa */
+    display: inline-block; /* Muestra el icono en línea */
+    background: rgba(255, 255, 255, .1); /* Fondo semitransparente */
+}
+
+.login-form .group label .icon:before, .login-form .group label .icon:after {
+    content: ''; /* Contenido vacío */
+    width: 10px; height: 2px; /* Dimensiones de las líneas */
+    background: #fff; /* Color blanco */
+    position: absolute; /* Posición absoluta */
+    transition: all .2s ease-in-out 0s; /* Transición suave */
+}
+
+.login-form .group label .icon:before {
+    left: 3px; width: 5px; bottom: 6px; /* Posición y tamaño del primer pseudo-elemento */
+    transform: scale(0) rotate(0); /* Escala y rotación inicial */
+}
+
+.login-form .group label .icon:after {
+    top: 6px; right: 0; /* Posición y tamaño del segundo pseudo-elemento */
+    transform: scale(0) rotate(0); /* Escala y rotación inicial */
+}
+
+.login-form .group .check:checked + label {
+    color: #fff; /* Cambia el color de la etiqueta cuando se selecciona el check */
+}
+
+.login-form .group .check:checked + label .icon {
+    background: #1161ee; /* Cambia el fondo del icono cuando el check está seleccionado */
+}
+
+.login-form .group .check:checked + label .icon:before {
+    transform: scale(1) rotate(45deg); /* Gira el primer pseudo-elemento cuando se selecciona */
+}
+
+.login-form .group .check:checked + label .icon:after {
+    transform: scale(1) rotate(-45deg); /* Gira el segundo pseudo-elemento cuando se selecciona */
+}
+
+.login-html .sign-in:checked + .tab + .sign-up + .tab + .login-form .sign-in-htm {
+    transform: rotate(0); /* Vuelve a rotar el formulario al estado original cuando se selecciona 'sign-in' */
+}
+
+.login-html .sign-up:checked + .tab + .login-form .sign-up-htm {
+    transform: rotate(0); /* Vuelve a rotar el formulario al estado original cuando se selecciona 'sign-up' */
+}
+
+.hr {
+    height: 2px; /* Altura de la línea horizontal */
+    margin: 60px 0 50px 0; /* Margen alrededor de la línea */
+    background: rgba(255, 255, 255, .2); /* Color de fondo de la línea */
+}
+
+.foot-lnk {
+    text-align: center; /* Centra el texto del pie de página */
+}
+
+
+/* CSS para NAVBAR */
+
+/* Centrar el navbar */
+.navbar {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    width: 100%;
+    padding: 10px 0;
+    background-color: #333; /* Color de fondo (opcional) */
+}
+
+/* Estilo para el contenido del navbar */
+.navbar-content {
+    display: flex;
+    justify-content: center; /* Centra el contenido dentro de este contenedor */
+    align-items: center;
+    text-align: center; /* Centra el texto dentro del contenedor */
+}
+
+/* Botón de cerrar sesión */
+.button {
+    padding: 5px 15px;
+    background-color: #1161ee;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0a47b2;
+}
+
+/* Estilo de texto */
+.navbar-text {
+    color: #fff;
+    font-size: 16px;
+}
