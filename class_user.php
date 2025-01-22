@@ -10,8 +10,9 @@ class Usuario
     private $correo;
     private $password;
     private $fechaNacimiento;
-
-    public function __construct($nombre =null, $correo =null, $password =null, $fechaNacimiento =null)
+    public $email;
+    public $id_google;
+    public function __construct($id=null,$nombre =null, $correo =null, $password =null, $fechaNacimiento =null)
     {
         try {
             $this->conexion = $GLOBALS['conn']; // Conexión global a la base de datos
@@ -93,5 +94,41 @@ class Usuario
         }
     }
     
+    
+    public function consultarGoogleAuth($google_id, $email) {
+        $sql = "SELECT * FROM usuarios WHERE google_id = :google_id OR google_email = :email";
+        $stmt = $this->conexion->prepare($sql);
+        $stmt->execute([':google_id' => $google_id, ':email' => $email]);
+        return $stmt->fetch(); // Asegúrate de que esta función devuelve lo esperado
+    }
+
+    function registrarUsuario($googleId, $nombre, $googleEmail) {
+    
+        try {
+            // Preparar la consulta
+            $stmt = $this->conexion->prepare("INSERT INTO usuarios 
+                (nombre_usuario, email, google_id, google_email, fecha_registro, estado) 
+                VALUES (:google_email, NULL, :google_id,  :nombre_usuario, NOW(), 1)");
+    
+            // Vincular parámetros
+            $stmt->bindParam(':nombre_usuario', $nombre, PDO::PARAM_STR);
+            $stmt->bindParam(':google_id', $googleId, PDO::PARAM_STR);
+            $stmt->bindParam(':google_email', $googleEmail, PDO::PARAM_STR);
+    
+            // Ejecutar consulta
+            if ($stmt->execute()) {
+                echo "Usuario registrado correctamente.";
+            } else {
+                echo "Error al registrar usuario: " . implode(", ", $stmt->errorInfo());
+            }
+        } catch (PDOException $e) {
+            echo "Error de PDO: " . $e->getMessage();
+        }
+    }
+    
+    
 }
+
+
+    
 ?>

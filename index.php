@@ -27,8 +27,10 @@
     </nav>
 
 
+
     <div class="login-wrap">
         <div class="login-html">
+        <a href="google_login.php" class="btn btn-danger">Iniciar sesión con Google</a>
             <input id="tab-1" type="radio" name="tab" class="sign-in" checked>
             <label for="tab-1" class="tab">Iniciar Sesión</label>
             <input id="tab-2" type="radio" name="tab" class="sign-up">

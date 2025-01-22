@@ -1,0 +1,21 @@
+{
+    "name": "shiimy-woozie/login_draft",
+    "description": "Proyecto para Login de Usuarios y con Google",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "ShiimyWoozie\\LoginDraft\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Woozie Elias"
+        }
+    ],
+    "require": {
+        "google/apiclient": "^2.0",
+        "vlucas/phpdotenv": "^5.0"
+
+    }
+}
