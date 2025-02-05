@@ -59,15 +59,25 @@ if (isset($_GET['code'])) {
 }
 
 // Mostrar mensaje de bienvenida
+
 if (!isset($_SESSION['nombre_usuario'])) {
     $authUrl = $client->createAuthUrl();
-    echo '<a href="' . $authUrl . '">Iniciar sesión con Google</a>';
+    
+    // Redirigir automáticamente al usuario al login de Google
+    header("Location: $authUrl");
+    exit();
 } else {
+    /*
     $nombreUsuario = $_SESSION['nombre_usuario'] ?? "Usuario";
     print_r($_SESSION);
     echo "$googleId $googleEmail $nombreUsuario";
     echo '¡Hola, ' . htmlspecialchars($nombreUsuario) . '! Has iniciado sesión con Google.';
+    */
+    $nombreUsuario = $_SESSION['nombre_usuario'] ?? "Usuario";
+    header("Location: index.php");
+
 }
+
 
 ?>
 

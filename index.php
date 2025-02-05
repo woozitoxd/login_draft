@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Login y Registro</title>
+
 </head>
 <body>
 
@@ -30,7 +31,6 @@
 
     <div class="login-wrap">
         <div class="login-html">
-        <a href="google_login.php" class="btn btn-danger">Iniciar sesión con Google</a>
             <input id="tab-1" type="radio" name="tab" class="sign-in" checked>
             <label for="tab-1" class="tab">Iniciar Sesión</label>
             <input id="tab-2" type="radio" name="tab" class="sign-up">
@@ -52,11 +52,19 @@
                         <div class="group">
                             <input type="submit" class="button" value="Iniciar Sesión">
                         </div>
-                        <div class="hr"></div>
+                    </form>
+                    
+                    <a href="google_login.php" class="styleGoogle">
+                        <img src="https://lh3.googleusercontent.com/COxitqgJr1sJnIDe8-jiKhxDx1FrYbtRHKJ9z_hELisAlapwE9LUPh6fcXIfb5vwpbMl4xl9H9TRFPc5NOO8Sb3VSgIBrfRYvW6cUA" alt="">
+                        Iniciar sesión con Google
+                    </a>
+
+                    <div>
+                        <hr>    
                         <div class="foot-lnk">
                             <a href="#forgot">¿Olvidaste tu contraseña?</a>
                         </div>
-                    </form>
+                    </div>
                 </div>
 
                 <!-- Formulario de Registro -->

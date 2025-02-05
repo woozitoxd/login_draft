@@ -26,11 +26,12 @@ a {
     max-width: 525px; /* Establece un ancho máximo */
     min-height: 670px; /* Establece una altura mínima */
     position: relative; /* Establece una posición relativa para el contenedor */
-    background: url(https://scontent.fepa5-1.fna.fbcdn.net/v/t39.30808-6/272666670_10159663553661624_8474978284170913330_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=0b6b33&_nc_ohc=OPeiNYRfy_IQ7kNvgGTNUzO&_nc_oc=Adhcm3Rp3OE0ThwuBMU0So_7Vmvg0ZFkWnf3msm05GT6yIqt7oHrtRUcQQOXEIUSpdl6w4iMPlvczXNikVfaIf8d&_nc_zt=23&_nc_ht=scontent.fepa5-1.fna&_nc_gid=AmG-MOW9dc_62tGfRwHO6AQ&oh=00_AYBeoExr-57pEsXDhoT5EwVGrXb83dfs7CHucX8HbUW1Uw&oe=678B7F6B) no-repeat center; /* Define una imagen de fondo */
+    background: url(https://i.pinimg.com/736x/92/96/12/9296122992f3f46c7bf99f143b1d0fd7.jpg) no-repeat center; /* Define una imagen de fondo */
     background-size: cover; /* Esto hace que la imagen cubra el contenedor */
 
     box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19); /* Aplica sombra al contenedor */
 }
+
 
 .login-html {
     width: 100%; /* Ancho completo */
@@ -167,7 +168,6 @@ a {
     text-align: center; /* Centra el texto del pie de página */
 }
 
-
 /* CSS para NAVBAR */
 
 /* Centrar el navbar */
@@ -206,4 +206,31 @@ a {
 .navbar-text {
     color: #fff;
     font-size: 16px;
+}
+
+
+/* Estilo boton de google */
+.styleGoogle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: #1161ee;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.styleGoogle img {
+    width: 25px;
+    height: 25px;
+}
+
+.styleGoogle:hover {
+    background-color: #0d4ec4;
 }
