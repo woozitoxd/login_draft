@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if ($result['status'] == 'success') {
                 // Redirigir a la página index después de un registro exitoso
-                header("Location: index.php");
+                header("Location: ../test_natura/index.php");
                 exit;
             } else {
                 // Redirigir con un mensaje de error

@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
             // Retornar una respuesta JSON indicando éxito
             echo 'Inicio de sesión exitoso';
-            header('Location: index.php'); // Redirige a la pag de inicio 
+            header('Location: ../test_natura/index.php'); // Redirige a la pag de inicio 
         } else if($resultado === 0){
             echo 'Usted tiene su cuenta bloqueada, contacte a soporte';
         } else if ($resultado === null){
