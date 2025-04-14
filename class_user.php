@@ -62,7 +62,7 @@ class Usuario
     }
 
     public function consultar($correo, $password) {
-        try{
+        try {
             $sql = "
             SELECT 
                 id_usuario, 
@@ -73,26 +73,33 @@ class Usuario
             FROM 
                 usuarios 
             WHERE 
-                email = :correo;"; //uso el stored procedure que tengo en mi base de datos para traer los datos
-            $stmt = $this->conexion->prepare($sql);  //traigo los datos tales como; nombre, correo, contraseña, id del rol, nombre del rol
+                email = :correo;";
+            
+            $stmt = $this->conexion->prepare($sql);
             $stmt->bindParam(':correo', $correo, PDO::PARAM_STR);
             $stmt->execute();
             $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
-            
-            
-            if($usuario['estado'] == 0){ //verificamos que el estado no sea 0, que en nuestra logica, significa bloqueado.
-                return 0; //retorno 0 porque es la validacion que usaré
-            }else if ($usuario && password_verify($password, $usuario['password'])) {
-                unset($usuario['password']); // Unset de la contraseña para no almacenarla en la sesión
-                return $usuario; // Retornar el usuario con el id_rol y el nombre del rol
-            } else {
-                return null; // Usuario no encontrado o contraseña incorrecta
+    
+            if (!$usuario) {
+                return null; // Usuario no encontrado
             }
-
-        }catch (PDOException $e ){
-            return $e->getMessage();
+    
+            if ($usuario['estado'] == 0) {
+                return 0; // Usuario bloqueado
+            }
+    
+            if (password_verify($password, $usuario['password'])) {
+                unset($usuario['password']); // No guardar password en sesión
+                return $usuario;
+            } else {
+                return null; // Contraseña incorrecta
+            }
+    
+        } catch (PDOException $e) {
+            return $e->getMessage(); // O podés lanzar una excepción si querés
         }
     }
+    
     
     
     public function consultarGoogleAuth($google_id, $email) {

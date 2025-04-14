@@ -1,6 +1,6 @@
 body {
     margin: 0; /* Elimina el margen por defecto del navegador */
-    color: #6a6f8c; /* Establece el color del texto */
+    color: #000000; /* Establece el color del texto */
     background: #c8c8c8; /* Establece el color de fondo de la página */
     font: 600 16px/18px 'Open Sans', sans-serif; /* Establece la fuente, tamaño y altura de línea para el texto */
 }
@@ -41,7 +41,7 @@ a {
     height: 100%; /* Altura completa */
     position: absolute; /* Coloca el contenedor de forma absoluta */
     padding: 90px 70px 50px 70px; /* Espaciado alrededor del contenido */
-    background: rgba(40, 57, 101, .9); /* Fondo semitransparente */
+    background: rgb(36 68 18 / 63%); /* Fondo semitransparente */
 }
 
 .login-html .sign-in-htm, .login-html .sign-up-htm {
@@ -71,7 +71,7 @@ a {
 
 .login-html .sign-in:checked + .tab, .login-html .sign-up:checked + .tab {
     color: #fff; /* Cambia el color del texto cuando está seleccionado */
-    border-color: #1161ee; /* Cambia el color del borde cuando está seleccionado */
+    border-color: #bb915b; /* Cambia el color del borde cuando está seleccionado */
 }
 
 .login-form {
@@ -219,7 +219,7 @@ a {
     justify-content: center;
     gap: 10px;
     padding: 10px 20px;
-    background-color: #1161ee;
+    background-color: #bb915b;
     color: white;
     border: none;
     border-radius: 25px;
